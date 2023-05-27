@@ -1,0 +1,68 @@
+import unittest
+from geometria import Geometria
+
+class TestGeometria(unittest.TestCase):
+
+    def test_areaCuadrado(self):
+        geometria = Geometria(5, 0, 0)
+        resultado_obtenido = geometria.areaCuadrado(3)
+        resultado_esperado = 9
+        self.assertEqual(resultado_obtenido, resultado_esperado)
+
+    def test_areaCirculo(self):
+        geometria = Geometria(0, 0, 0)
+        resultado_obtenido = geometria.areaCirculo(5)
+        resultado_esperado = 78.54
+        self.assertAlmostEqual(resultado_obtenido, resultado_esperado, places=2)
+
+    def test_areaTiangulo(self):
+        geometria = Geometria(5, 8, 0)
+        resultado_obtenido = geometria.areaTiangulo(5, 8)
+        resultado_esperado = 20
+        self.assertEqual(resultado_obtenido, resultado_esperado)
+
+    def test_areaRectangulo(self):
+        geometria = Geometria(6, 9, 0)
+        resultado_obtenido = geometria.areaRectangulo(6, 9)
+        resultado_esperado = 54
+        self.assertEqual(resultado_obtenido, resultado_esperado)
+
+    def test_areaPentagono(self):
+        geometria = Geometria(10, 7, 0)
+        resultado_obtenido = geometria.areaPentagono(10, 7)
+        resultado_esperado = 35
+        self.assertEqual(resultado_obtenido, resultado_esperado)
+
+    def test_areaRombo(self):
+        geometria = Geometria(8, 6, 0)
+        resultado_obtenido = geometria.areaRombo(8, 6)
+        resultado_esperado = 24
+        self.assertEqual(resultado_obtenido, resultado_esperado)
+
+    def test_areaRomboide(self):
+        geometria = Geometria(7, 5, 0)
+        resultado_obtenido = geometria.areaRomboide(7, 5)
+        resultado_esperado = 35
+        self.assertEqual(resultado_obtenido, resultado_esperado)
+
+    def test_areaTrapecio(self):
+        geometria = Geometria(8, 12, 4)
+        resultado_obtenido = geometria.areaTrapecio(8, 12, 4)
+        resultado_esperado = 40.0  # Ajuste el resultado esperado
+        self.assertEqual(resultado_obtenido, resultado_esperado)
+
+    def test_set_figuraName(self):
+        geometria = Geometria(0, 0, 0)
+        geometria.set_figuraName(4)
+        resultado_obtenido = geometria.figuraName
+        resultado_esperado = "Rectangulo"
+        self.assertEqual(resultado_obtenido, resultado_esperado)
+
+    def test_switch(self):
+        geometria = Geometria(5, 0, 0)
+        resultado_obtenido = geometria.switch(1)
+        resultado_esperado = 25
+        self.assertEqual(resultado_obtenido, resultado_esperado)
+
+if __name__ == '__main__':
+    unittest.main()
